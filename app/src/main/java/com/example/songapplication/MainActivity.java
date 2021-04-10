@@ -15,6 +15,17 @@ import java.util.Collections;
 import java.util.Comparator;
 
 
+
+
+// JE teste un truc de debile car c'est drole
+
+
+
+
+
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.R)
