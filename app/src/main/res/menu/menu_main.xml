@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:compat="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+   <item
+       android:id="@+id/action_shuffle"
+       android:icon="@drawable/rand"
+       android:orderInCategory="1"
+       compat:showAsAction="ifRoom"
+       android:title="@string/shuffle"
+       tools:context=".MainActivity" />
+
+   <item
+       android:id="@+id/action_play"
+       android:icon="@drawable/play"
+       android:orderInCategory="2"
+       compat:showAsAction="always"
+       android:title="@string/end"/>
+
+</menu>
+
