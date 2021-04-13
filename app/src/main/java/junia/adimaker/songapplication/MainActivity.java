@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lv_song = (ListView) findViewById(R.id.song_list);
+        lv_song = findViewById(R.id.song_list);
 
         context = getApplicationContext();
 
@@ -64,18 +65,37 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void GetAllSongs(){
+        File folder=new File(Environment.getExternalStorageDirectory()+"/songs");
+        String path = folder.toString();
+        boolean success = true;
+        if (!folder.exists()) {
+            Toast.makeText(MainActivity.this, "Directory Does Not Exist, Create It", Toast.LENGTH_SHORT).show();
+            success = folder.mkdir();
+        }
+        if (success) {
+            Toast.makeText(MainActivity.this, "Directory Created", Toast.LENGTH_SHORT).show();
+            File demofile = new File(folder, "demo.xml");
+            try{
+                FileWriter writer = new FileWriter(demofile,true);
+                writer.append("sample song");
+                writer.flush();
+                writer.close();
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
 
-        String path = Environment.getExternalStorageDirectory().toString()+"/Songs";
-        Log.d("Files", "Path: " + path);
+        } else {
+            Toast.makeText(MainActivity.this, "Failed - Error", Toast.LENGTH_SHORT).show();
+        }
+       Log.d("Files", "Path: " + path);
         File directory = new File(path);
         File[] files = directory.listFiles();
-        Log.d("Files", "Size: "+ files.length);
-        for (int i = 0; i < files.length; i++)
-        {
-            ListElementsArrayList.add(files[i].getName());
+        if (files.length>0) {
+            Log.d("Files", "Size: " + files.length);
+            for (int i = 0; i < files.length; i++) {
+                ListElementsArrayList.add(files[i].getName());
+            }
         }
-
-
 
     }
 
