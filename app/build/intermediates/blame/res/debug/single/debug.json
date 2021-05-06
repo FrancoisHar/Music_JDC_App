@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    }
+]
