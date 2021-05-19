@@ -31,7 +31,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.mcuhq.simplebluetooth.MainActivity" >
+        <activity android:name="com.adimaker.guitarapp.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/thomas/Projects/15-Code/android/Android-Simple-Bluetooth-Example/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\fdhar\\OneDrive\\Bureau\\Joueur de guitar\\Music_JDC_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/thomas/.gradle/caches/transforms-2/files-2.1/aac12098f28938b568301ce9ae67f98e/appcompat-v7-23.3.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "C:\\Users\\fdhar\\.gradle\\caches\\transforms-2\\files-2.1\\aac12098f28938b568301ce9ae67f98e\\appcompat-v7-23.3.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

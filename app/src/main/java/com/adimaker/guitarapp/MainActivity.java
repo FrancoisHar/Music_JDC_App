@@ -153,11 +153,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+
             btn_sync.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("SYNC");
+                }
+            });
+
+            btn_play.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("PLAY");
                 }
             });
 
@@ -310,8 +319,11 @@ public class MainActivity extends AppCompatActivity {
             if(BluetoothDevice.ACTION_FOUND.equals(action)){
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // add the name to the list
-                mBTArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-                mBTArrayAdapter.notifyDataSetChanged();
+                String deviceName = device.getName();
+                if (deviceName != null) {
+                    mBTArrayAdapter.add(deviceName+ "\n" + device.getAddress());
+                    mBTArrayAdapter.notifyDataSetChanged();
+                }
             }
         }
     };
