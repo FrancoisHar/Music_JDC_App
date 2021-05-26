@@ -3,6 +3,7 @@ package com.adimaker.guitarapp;
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,37 +32,40 @@ public class ConnectedThread extends Thread {
         mmOutStream = tmpOut;
     }
 
-    @Override
     public void run() {
-        byte[] buffer = new byte[1024];  // buffer store for the stream
-        int bytes; // bytes returned from read()
-        // Keep listening to the InputStream until an exception occurs
+        byte[] buffer = new byte[1024];
+        int begin = 0;
+
+        int bytes = 0; // bytes returned from read()
+
         while (true) {
             try {
-                // Read from the InputStream
-                bytes = mmInStream.available();
-                if(bytes != 0) {
-                    buffer = new byte[1024];
-                    SystemClock.sleep(100); //pause and wait for rest of data. Adjust this depending on your sending speed.
-                    bytes = mmInStream.available(); // how many bytes are ready to be read?
-                    bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
-                    mHandler.obtainMessage(MainActivity.MESSAGE_READ, bytes, -1, buffer)
-                            .sendToTarget(); // Send the obtained bytes to the UI activity
+                bytes += mmInStream.read(buffer, bytes, buffer.length - bytes);
+                for (int i = begin; i < bytes; i++) {
+                    if (buffer[i] == "#".getBytes()[0]) {
+                        mHandler.obtainMessage(1, begin, i, buffer).sendToTarget();
+                        begin = i + 1;
+                        if (i == bytes - 1) {
+                            bytes = 0;
+                            begin = 0;
+                        }
+                    }
                 }
             } catch (IOException e) {
-                e.printStackTrace();
-
                 break;
             }
         }
     }
 
     /* Call this from the main activity to send data to the remote device */
-    public void write(String input) {
-        byte[] bytes = input.getBytes();           //converts entered String into bytes
+    public void write(String message) {
+        //Log.d(TAG, "...Data to send: " + message + "...");
+        byte[] msgBuffer = message.getBytes();
         try {
-            mmOutStream.write(bytes);
-        } catch (IOException e) { }
+            mmOutStream.write(msgBuffer);
+        } catch (IOException e) {
+            //  Log.d(TAG, "...Error data send: " + e.getMessage() + "...");
+        }
     }
 
     /* Call this from the main activity to shutdown the connection */

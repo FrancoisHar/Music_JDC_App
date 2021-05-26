@@ -1,4 +1,4 @@
-#Tue May 18 09:58:49 CEST 2021
-base.0=C\:\\Users\\fdhar\\OneDrive\\Bureau\\Joueur de guitar\\Music_JDC_App\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
-path.0=classes.dex
+#Wed May 26 18:49:30 CEST 2021
+base.0=/home/thom/Projects/15-Code/android/Music_JDC_App/app/build/intermediates/dex/debug/out/classes.dex
 renamed.0=classes.dex
+path.0=classes.dex
