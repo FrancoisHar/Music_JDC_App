@@ -20,6 +20,10 @@
         "source": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/build/intermediates/res/merged/debug/raw_songdemo.txt.flat",
+        "source": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/res/raw/songdemo.txt"
+    },
+    {
         "merged": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }

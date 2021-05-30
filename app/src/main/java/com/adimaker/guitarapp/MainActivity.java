@@ -2,6 +2,9 @@ package com.adimaker.guitarapp;
 import android.annotation.SuppressLint;
 import android.os.Build;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import android.Manifest;
@@ -34,6 +37,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -165,7 +171,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("PLAY");
+                    {
+                        try {
+                            //mConnectedThread.write("PLAY");
+                            readSong(v);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             });
 
@@ -313,29 +326,69 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void GetAllSongs() {
-        File folder = new File(Environment.getExternalStorageDirectory() + "/songs");
-        String path = folder.toString();
-        boolean success = true;
-        if (!folder.exists()) {
-            Toast.makeText(MainActivity.this, "Directory Does Not Exist, Create It", Toast.LENGTH_SHORT).show();
-            success = folder.mkdir();
-            if (success) {
-                //Toast.makeText(GuitarActivity.this, "Directory Created", Toast.LENGTH_SHORT).show();
-                File demofile = new File(folder, "demo.txt");
-                try {
-                    FileWriter writer = new FileWriter(demofile, true);
-                    writer.append("sample song");
-                    writer.flush();
-                    writer.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+    public void readSong(View view) throws IOException {
+        String string = "";
+        StringBuilder stringBuilder = new StringBuilder();
+        // Let's try with the demo song :
+        InputStream is = this.getResources().openRawResource(R.raw.songdemo);
+        // Create a read buffer :
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        // Send a message to Arduino to say we are sending a song :
 
-            } else {
-                Toast.makeText(MainActivity.this, "Failed - Error", Toast.LENGTH_SHORT).show();
+        mConnectedThread.write("SONG_NEW");
+        mConnectedThread.write("DEMOSONG");
+        // While file is not empty :
+        while (true) {
+            try {
+                if ((string = reader.readLine()) == null) break;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stringBuilder.append(string).append("\n");
+            mConnectedThread.write(string);
+        }
+
+        is.close();
+        mConnectedThread.write("SONG_END");
+        Toast.makeText(getBaseContext(), stringBuilder.toString(),
+                Toast.LENGTH_LONG).show();
+
+    }
+
+    public void GetAllSongs() {
+        Context m_context = getApplicationContext();
+        String m_songsdir = "/songs";
+        // Create the songs folder :
+        File cfgdir = new File(Environment.getDataDirectory() + m_songsdir);
+        if (!cfgdir.exists()) {
+            cfgdir.mkdirs();
+        }
+        InputStream in = m_context.getResources().openRawResource(R.raw.songdemo);
+        String filename = m_context.getResources().getResourceEntryName(R.raw.songdemo);
+        // Copying demosong to the SD storage :
+        File f = new File(filename);
+
+        if (!f.exists()) {
+            try {
+                OutputStream out = new FileOutputStream(new File(Environment.getDataDirectory() + m_songsdir, filename));
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = in.read(buffer, 0, buffer.length)) != -1) {
+                    out.write(buffer, 0, len);
+                }
+                in.close();
+                out.close();
+            } catch (FileNotFoundException e) {
+                Log.i("Test", "Setup::copyResources - " + e.getMessage());
+            } catch (IOException e) {
+                Log.i("Test", "Setup::copyResources - " + e.getMessage());
             }
         }
+
+
+        File folder = new File(Environment.getDataDirectory() + m_songsdir);
+        String path = folder.toString();
+        boolean success = true;
 
         Log.d("Files", "Path: " + path);
         File directory = new File(path);
