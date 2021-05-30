@@ -2,6 +2,7 @@ package com.adimaker.guitarapp;
 import android.annotation.SuppressLint;
 import android.os.Build;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.io.File;
 import java.io.FileWriter;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -169,7 +171,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("PLAY");
+                    {
+                        try {
+                            //mConnectedThread.write("PLAY");
+                            readSong(v);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             });
 
@@ -315,6 +324,35 @@ public class MainActivity extends AppCompatActivity {
             } else
                 mBluetoothStatus.setText("Disabled");
         }
+    }
+
+    public void readSong(View view) throws IOException {
+        String string = "";
+        StringBuilder stringBuilder = new StringBuilder();
+        // Let's try with the demo song :
+        InputStream is = this.getResources().openRawResource(R.raw.songdemo);
+        // Create a read buffer :
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        // Send a message to Arduino to say we are sending a song :
+
+        mConnectedThread.write("SONG_NEW");
+        mConnectedThread.write("DEMOSONG");
+        // While file is not empty :
+        while (true) {
+            try {
+                if ((string = reader.readLine()) == null) break;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stringBuilder.append(string).append("\n");
+            mConnectedThread.write(string);
+        }
+
+        is.close();
+        mConnectedThread.write("SONG_END");
+        Toast.makeText(getBaseContext(), stringBuilder.toString(),
+                Toast.LENGTH_LONG).show();
+
     }
 
     public void GetAllSongs() {
