@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/thom/Projects/15-Code/android/Music_JDC_App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\fdhar\\OneDrive\\Bureau\\Joueur de guitar\\dossAppVersionFinal\\Music_JDC_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/home/thom/.gradle/caches/transforms-2/files-2.1/aac12098f28938b568301ce9ae67f98e/appcompat-v7-23.3.0/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\fdhar\\.gradle\\caches\\transforms-2\\files-2.1\\aac12098f28938b568301ce9ae67f98e\\appcompat-v7-23.3.0\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,40,45,50,52,54,55,56,107,159",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

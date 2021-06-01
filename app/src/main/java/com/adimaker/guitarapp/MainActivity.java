@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final UUID BT_MODULE_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     // MAC-address of Bluetooth module (you must edit this line)
-    private static final String locaddress = "24:6F:28:B4:5E:82";
+    private static final String locaddress = "00:14:03:05:09:56";
 
     // #defines for identifying shared types between calling functions
     private final static int REQUEST_ENABLE_BT = 1; // used to identify adding bluetooth names
@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> ListElementsArrayList;
 
     ListView lv_song;
+    private File directory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -335,8 +336,8 @@ public class MainActivity extends AppCompatActivity {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         // Send a message to Arduino to say we are sending a song :
 
-        mConnectedThread.write("SONG_NEW");
-        mConnectedThread.write("DEMOSONG");
+        mConnectedThread.write("SONG_NEW#");
+        mConnectedThread.write("DEMOSONG#");
         // While file is not empty :
         while (true) {
             try {
@@ -344,12 +345,12 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            stringBuilder.append(string).append("\n");
+            stringBuilder.append(string).append("#");
             mConnectedThread.write(string);
         }
 
         is.close();
-        mConnectedThread.write("SONG_END");
+        mConnectedThread.write("SONG_END#");
         Toast.makeText(getBaseContext(), stringBuilder.toString(),
                 Toast.LENGTH_LONG).show();
 
@@ -357,26 +358,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void GetAllSongs() {
         Context m_context = getApplicationContext();
+
         String m_songsdir = "/songs";
         // Create the songs folder :
-        File cfgdir = new File(Environment.getDataDirectory() + m_songsdir);
+        File cfgdir = new File(Environment.getExternalStorageDirectory() + m_songsdir);
         if (!cfgdir.exists()) {
             cfgdir.mkdirs();
         }
-        InputStream in = m_context.getResources().openRawResource(R.raw.songdemo);
+        InputStream is = m_context.getResources().openRawResource(R.raw.songdemo);
         String filename = m_context.getResources().getResourceEntryName(R.raw.songdemo);
         // Copying demosong to the SD storage :
         File f = new File(filename);
 
         if (!f.exists()) {
             try {
-                OutputStream out = new FileOutputStream(new File(Environment.getDataDirectory() + m_songsdir, filename));
+                OutputStream out = new FileOutputStream(new File(Environment.getExternalStorageDirectory() + m_songsdir, filename));
                 byte[] buffer = new byte[1024];
                 int len;
-                while ((len = in.read(buffer, 0, buffer.length)) != -1) {
+                while ((len = is.read(buffer, 0, buffer.length)) != -1) {
                     out.write(buffer, 0, len);
                 }
-                in.close();
+                is.close();
                 out.close();
             } catch (FileNotFoundException e) {
                 Log.i("Test", "Setup::copyResources - " + e.getMessage());
@@ -386,19 +388,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        File folder = new File(Environment.getDataDirectory() + m_songsdir);
+        File folder = new File(Environment.getExternalStorageDirectory() + m_songsdir);
         String path = folder.toString();
         boolean success = true;
 
-        Log.d("Files", "Path: " + path);
-        File directory = new File(path);
-        File[] files = directory.listFiles();
-        if (files.length > 0) {
-            Log.d("Files", "Size: " + files.length);
-            for (int i = 0; i < files.length; i++) {
-                ListElementsArrayList.add(files[i].getName());
+        Log.d("Files", "Path: " + folder);
+        File[] files = folder.listFiles();
+        if (files != null) {
+            if( files.length>0) {
+                Log.d("Files", "Size: " + files.length);
+                for (int i = 0; i < files.length; i++) {
+                    ListElementsArrayList.add(files[i].getName());
+                }
             }
         }
+
 
     }
 

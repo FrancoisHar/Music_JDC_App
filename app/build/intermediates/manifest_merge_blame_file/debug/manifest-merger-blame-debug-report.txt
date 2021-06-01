@@ -6,72 +6,73 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml
+8-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="23" />
-9-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml
+9-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.BLUETOOTH" />
-11-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:5:5-68
-11-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:5:22-65
+11-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:5:5-68
+11-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:5:22-65
 12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-12-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:6:5-74
-12-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:6:22-71
+12-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:6:5-74
+12-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:6:22-71
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:7:5-79
-13-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:7:22-76
+13-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:7:22-76
 14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-14-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:8:5-81
-14-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:8:22-78
+14-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:8:5-81
+14-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:8:22-78
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:9:5-80
-15-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:9:22-77
+15-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:9:5-80
+15-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:9:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:10:5-81
-16-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:10:22-78
+16-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:10:5-81
+16-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:10:22-78
 17
 18    <permission
-18-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:11:5-89
+18-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:11:5-89
 19        android:name="android.permission.BLUETOOTH"
-19-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:11:17-60
+19-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:11:17-60
 20        android:label="BLUETOOTH" />
-20-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:11:61-86
+20-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:11:61-86
 21    <permission android:name="android.permission.BLUETOOTH_ADMIN" />
-21-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:12:5-69
-21-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:12:17-66
+21-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:12:5-69
+21-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:12:17-66
 22    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-22-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:13:5-74
-22-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:13:17-71
+22-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:13:5-74
+22-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:13:17-71
 23    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-23-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:14:5-76
-23-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:14:17-73
+23-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:14:5-76
+23-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:14:17-73
 24
 25    <application
-25-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:16:5-29:19
+25-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:16:5-29:19
 26        android:allowBackup="true"
-26-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:17:9-35
+26-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:17:9-35
 27        android:debuggable="true"
 28        android:icon="@mipmap/ic_launcher"
-28-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:18:9-43
+28-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:18:9-43
 29        android:label="@string/app_name"
-29-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:19:9-41
+29-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:19:9-41
 30        android:supportsRtl="true"
-30-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:20:9-35
-31        android:theme="@style/AppTheme" >
-31-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:21:9-40
-32        <activity android:name="com.adimaker.guitarapp.MainActivity" >
-32-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:22:9-28:20
-32-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:22:19-69
-33            <intent-filter>
-33-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:23:13-27:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:24:17-69
-34-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:24:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:26:17-77
-36-->/home/thom/Projects/15-Code/android/Music_JDC_App/app/src/main/AndroidManifest.xml:26:27-74
-37            </intent-filter>
-38        </activity>
-39    </application>
-40
-41</manifest>
+30-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:20:9-35
+31        android:testOnly="true"
+32        android:theme="@style/AppTheme" >
+32-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:21:9-40
+33        <activity android:name="com.adimaker.guitarapp.MainActivity" >
+33-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:22:9-28:20
+33-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:22:19-69
+34            <intent-filter>
+34-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:23:13-27:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:24:17-69
+35-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:24:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:26:17-77
+37-->C:\Users\fdhar\OneDrive\Bureau\Joueur de guitar\dossAppVersionFinal\Music_JDC_App\app\src\main\AndroidManifest.xml:26:27-74
+38            </intent-filter>
+39        </activity>
+40    </application>
+41
+42</manifest>
